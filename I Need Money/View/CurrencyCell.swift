@@ -14,17 +14,18 @@ class CurrencyCell: UITableViewCell {
     @IBOutlet weak var icon: UIImageView!
     
     var coin: Coin! {
+        // dés que le Coin est rentré, on récupère les autres infos
         didSet {
             nameLbl.text = coin.name
             priceLbl.text = coin.price
             if let urlString = coin.iconUrl {
                 if let url = URL(string: urlString) {
                     print(urlString)
-                    URLSession.shared.dataTask(with: url) { (d, _, _) in
+                    URLSession.shared.dataTask(with: url) { (d, _, _) in // Thread secondaire
                         if let data = d {
-                            print(data)
+                            //print(data)
                             let img = UIImage(data: data)
-                            DispatchQueue.main.async {
+                            DispatchQueue.main.async { // Thread principal
                                 self.icon.image = img
                             }
                         }

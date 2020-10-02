@@ -46,7 +46,6 @@
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="248-pu-04l">
                                                     <rect key="frame" x="204" y="41.5" width="100" height="21"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" constant="100" id="HHp-FE-NDA"/>
                                                         <constraint firstAttribute="height" constant="21" id="PCe-qu-lDr"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="13"/>
@@ -60,6 +59,7 @@
                                                 <constraint firstItem="oeg-PE-H73" firstAttribute="centerY" secondItem="BRT-eN-yuc" secondAttribute="centerY" id="8qD-Pi-G4X"/>
                                                 <constraint firstItem="248-pu-04l" firstAttribute="centerY" secondItem="BRT-eN-yuc" secondAttribute="centerY" id="caA-Lz-DmC"/>
                                                 <constraint firstItem="99A-9R-o9T" firstAttribute="centerY" secondItem="BRT-eN-yuc" secondAttribute="centerY" id="hDJ-hu-ShK"/>
+                                                <constraint firstItem="248-pu-04l" firstAttribute="width" secondItem="99A-9R-o9T" secondAttribute="height" multiplier="100:21" id="k8l-XC-hT4"/>
                                                 <constraint firstItem="248-pu-04l" firstAttribute="leading" secondItem="99A-9R-o9T" secondAttribute="trailing" constant="8" id="pNt-Fk-o6r"/>
                                                 <constraint firstItem="oeg-PE-H73" firstAttribute="leading" secondItem="BRT-eN-yuc" secondAttribute="leading" constant="8" id="v70-9P-bGB"/>
                                             </constraints>
