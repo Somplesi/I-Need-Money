@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -15,6 +15,8 @@
 		0894A658250B5C2500EDED75 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0894A656250B5C2500EDED75 /* LaunchScreen.storyboard */; };
 		0894A663250B609500EDED75 /* APIResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0894A662250B609500EDED75 /* APIResponse.swift */; };
 		0894A667250B643200EDED75 /* CurrencyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0894A666250B643200EDED75 /* CurrencyCell.swift */; };
+		A2BD9ECD252721750095F303 /* APIHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2BD9ECC252721750095F303 /* APIHelper.swift */; };
+		A2BD9ED0252724F00095F303 /* AlertHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2BD9ECF252724F00095F303 /* AlertHelper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +30,8 @@
 		0894A659250B5C2500EDED75 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0894A662250B609500EDED75 /* APIResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIResponse.swift; sourceTree = "<group>"; };
 		0894A666250B643200EDED75 /* CurrencyCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyCell.swift; sourceTree = "<group>"; };
+		A2BD9ECC252721750095F303 /* APIHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIHelper.swift; sourceTree = "<group>"; };
+		A2BD9ECF252724F00095F303 /* AlertHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertHelper.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXGroup section */
@@ -67,6 +71,8 @@
 			isa = PBXGroup;
 			children = (
 				0894A662250B609500EDED75 /* APIResponse.swift */,
+				A2BD9ECC252721750095F303 /* APIHelper.swift */,
+				A2BD9ECF252724F00095F303 /* AlertHelper.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -102,6 +108,9 @@
 			dependencies = (
 			);
 			name = "I Need Money";
+			packageProductDependencies = (
+				A201546525270CF500243024 /* PocketSVG */,
+			);
 			productName = "I Need Money";
 			productReference = 0894A648250B5C2200EDED75 /* I Need Money.app */;
 			productType = "com.apple.product-type.application";
@@ -129,6 +138,9 @@
 				Base,
 			);
 			mainGroup = 0894A63F250B5C2200EDED75;
+			packageReferences = (
+				A201546425270CF500243024 /* XCRemoteSwiftPackageReference "PocketSVG" */,
+			);
 			productRefGroup = 0894A649250B5C2200EDED75 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -156,9 +168,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A2BD9ECD252721750095F303 /* APIHelper.swift in Sources */,
 				0894A667250B643200EDED75 /* CurrencyCell.swift in Sources */,
 				0894A650250B5C2200EDED75 /* ViewController.swift in Sources */,
 				0894A663250B609500EDED75 /* APIResponse.swift in Sources */,
+				A2BD9ED0252724F00095F303 /* AlertHelper.swift in Sources */,
 				0894A64C250B5C2200EDED75 /* AppDelegate.swift in Sources */,
 				0894A64E250B5C2200EDED75 /* SceneDelegate.swift in Sources */,
 			);
@@ -362,6 +376,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		A201546425270CF500243024 /* XCRemoteSwiftPackageReference "PocketSVG" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/pocketsvg/PocketSVG.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.6.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		A201546525270CF500243024 /* PocketSVG */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A201546425270CF500243024 /* XCRemoteSwiftPackageReference "PocketSVG" */;
+			productName = PocketSVG;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 0894A640250B5C2200EDED75 /* Project object */;
 }

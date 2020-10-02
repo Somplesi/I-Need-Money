@@ -6,6 +6,7 @@
 //
 
 import UIKit
+//import PocketSVG
 
 // https://github.com/public-apis/public-apis
 
@@ -21,45 +22,16 @@ class ViewController: UIViewController {
         tableView.delegate = self
         tableView.dataSource = self
         
-        getApi(currency: "EUR", period: "24h")
-    }
-    
-    // MARK: Get API
-    func getApi(currency: String, period: String) {
-        // https://docs.coinranking.com
-        let baseString = "https://api.coinranking.com/v1/public/coins"
-        let currency = "base=\(currency.uppercased())"  // parametre Devise
-        let period = "timePeriod=\(period)"             // parametre Période
-        
-        let urlString = baseString + "?" + currency + "&" + period
-        // https://api.coinranking.com/v1/public/coins?base=EUR&timePeriod=24h
-        if let url = URL(string: urlString) {
-            URLSession.shared.dataTask(with: url) { (d, r, e) in
-                // S'il y a des Données
-                if let data = d {
-                    print("Data: \(data)")
-                    do {
-                        let result = try JSONDecoder().decode(APIResponse.self, from: data)
-                        let datas = result.data.coins
-                        DispatchQueue.main.async {
-                            self.datas = datas
-                            self.tableView.reloadData()
-                        }
-                    } catch {
-                        print(error.localizedDescription)
-                    }
-                }
-                // S'il y a une Réponse
-                if let response = r {
-                    print("Response: \(response)")
-                }
-                // S'il y a une Erreur
-                if let error = e {
-                    print("Error: \(error.localizedDescription)")
-                }
-            }.resume()
-        } else {
-            print("Cette URL n'existe pas")
+        //getApi(currency: "EUR", period: "24h")
+        //APIHelper().getApi(currency: "EUR", period: "24h") { (coins, error) in
+        APIHelper.shared.getApi(currency: "EUR", period: "24h") { (coins, error) in // Singleton privé "_shared" de APIHelper
+            self.datas = coins
+            if error != nil {
+                //Alerthelper().errorAlert(error!.localizedDescription, viewController: self)
+                Alerthelper.get.errorAlert(error!.localizedDescription, viewController: self) // Singleton "get" de AlertHelper
+            }
+            
+            self.tableView.reloadData()
         }
     }
     
